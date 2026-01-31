@@ -1,0 +1,33 @@
+apiVersion: kb/v1
+name: living-specifications
+version: 0.1.0
+description: "Specification format, principles, and methodology for spec-driven development"
+
+entrypoints:
+  human: README.md
+  agent: AGENTS.md
+
+meta:
+  entrypoint: ".graft/meta-knowledge-base/docs/meta.md"
+
+imports:
+  - kind: local
+    path: .graft/meta-knowledge-base
+    entrypoint: knowledge-base.yaml
+
+paths:
+  docs: docs
+
+sources:
+  canonical:
+    - path: docs/**
+      note: "Specification methodology is canonical"
+
+rules:
+  lifecycle:
+    statuses: ["draft", "working", "stable", "deprecated"]
+  provenance:
+    requiredFor: ["methodology-recommendations", "format-specifications", "principle-definitions"]
+  writes:
+    allow: ["docs/**"]
+    deny: ["secrets/**", "credentials/**", ".graft/**"]
