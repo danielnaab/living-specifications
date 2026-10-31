@@ -53,16 +53,9 @@ Guiding principle: steal structures, not tooling.
 
 ## Using This in Your Repository
 
-Import this knowledge base via graft:
-
-```yaml
-# graft.yaml
-apiVersion: graft/v0
-deps:
-  living-specifications: "https://github.com/danielnaab/living-specifications.git#main"
-```
-
-Then reference the methodology from `.graft/living-specifications/docs/`.
+Link to the methodology by URL, for example
+[`docs/`](https://github.com/danielnaab/living-specifications/tree/main/docs), from your repository's agent instructions
+(`AGENTS.md` or `CLAUDE.md`). There is nothing to vendor or sync.
 
 ## Architecture
 

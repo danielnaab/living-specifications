@@ -19,5 +19,4 @@ All notable changes to this project will be documented in this file.
   - `docs/guides/reviewing-against-specs.md` - PR review patterns
 - Repository configuration:
   - `knowledge-base.yaml` - KB configuration importing meta-knowledge-base
-  - `graft.yaml` - Dependency management
   - `AGENTS.md` - Agent entrypoint

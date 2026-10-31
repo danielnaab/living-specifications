@@ -5,7 +5,7 @@ You are working in the **living-specifications knowledge base** — a repository
 ## Before Making Changes
 
 1. Read [knowledge-base.yaml](knowledge-base.yaml) for KB configuration
-2. Follow [meta knowledge base conventions](.graft/meta-knowledge-base/docs/meta.md)
+2. Follow [meta knowledge base conventions](https://github.com/danielnaab/meta-knowledge-base)
 3. Understand key policies:
    - **Authority**: docs/ is canonical
    - **Provenance**: Ground methodology recommendations in sources
@@ -31,7 +31,7 @@ As a knowledge curator for specification methodology:
 
 ## Workflow: Plan → Patch → Verify
 
-Follow the [agent workflow pattern](.graft/meta-knowledge-base/playbooks/agent-workflow.md):
+Follow the [agent workflow pattern](https://github.com/danielnaab/meta-knowledge-base/blob/main/docs/playbooks/agent-workflow.md):
 
 1. **Plan**: State intent, files to touch, uncertainties
 2. **Patch**: Make minimal changes to achieve goal
@@ -42,8 +42,7 @@ Follow the [agent workflow pattern](.graft/meta-knowledge-base/playbooks/agent-w
 You may write to:
 - `docs/**` — methodology documentation
 
-Never write to:
-- `.graft/**` — managed dependencies
+Never write to (enforced for Claude Code by `.claude/settings.json`):
 - `secrets/**`, `credentials/**` — sensitive paths
 
 ## Provenance Requirements
