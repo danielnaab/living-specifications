@@ -5,7 +5,7 @@ You are working in the **living-specifications knowledge base** — a repository
 ## Before Making Changes
 
 1. Read [knowledge-base.yaml](knowledge-base.yaml) for KB configuration
-2. Follow [meta knowledge base conventions](vendor/meta-knowledge-base/README.md)
+2. Follow [meta knowledge base conventions](scions/meta-knowledge-base/README.md)
 3. Understand key policies:
    - **Authority**: docs/ is canonical
    - **Provenance**: Ground methodology recommendations in sources
@@ -31,7 +31,7 @@ As a knowledge curator for specification methodology:
 
 ## Workflow: Plan → Patch → Verify
 
-Follow the [agent workflow pattern](vendor/meta-knowledge-base/docs/playbooks/agent-workflow.md):
+Follow the [agent workflow pattern](scions/meta-knowledge-base/docs/playbooks/agent-workflow.md):
 
 1. **Plan**: State intent, files to touch, uncertainties
 2. **Patch**: Make minimal changes to achieve goal
