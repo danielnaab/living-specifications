@@ -53,9 +53,13 @@ Guiding principle: steal structures, not tooling.
 
 ## Using This in Your Repository
 
-Link to the methodology by URL, for example
-[`docs/`](https://github.com/danielnaab/living-specifications/tree/main/docs), from your repository's agent instructions
-(`AGENTS.md` or `CLAUDE.md`). There is nothing to vendor or sync.
+Graft it ([graft](https://github.com/danielnaab/graft)): a pinned copy of this repo's export
+(README, CHANGELOG, `docs/`) in your `vendor/living-specifications/`, then link into that copy from
+your agent instructions (`AGENTS.md` or `CLAUDE.md`):
+
+```nix
+inputs.living-specifications = { url = "github:danielnaab/living-specifications/v1.0.0"; flake = false; };
+```
 
 ## Architecture
 
@@ -79,4 +83,3 @@ your-project (applies the methodology)
 ## Navigation
 
 - [Docs](docs/)
-- [Configuration](knowledge-base.yaml)

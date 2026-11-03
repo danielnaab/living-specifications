@@ -1,0 +1,9 @@
+# What this repository exports to repos that graft it (https://github.com/danielnaab/graft):
+# README, CHANGELOG and docs/. The rest is this repo's own, including what it grafts in vendor/.
+/.gitattributes      export-ignore
+/.claude/            export-ignore
+/AGENTS.md           export-ignore
+/knowledge-base.yaml export-ignore
+/flake.nix           export-ignore
+/flake.lock          export-ignore
+/vendor/             export-ignore
