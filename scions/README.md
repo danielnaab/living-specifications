@@ -8,4 +8,4 @@ then commit. `nix flake check` fails if this directory drifts from the pins.
 
 | Scion | Commit |
 |---|---|
-| [meta-knowledge-base](meta-knowledge-base/) | `b02c1a135a5b28e00aec1425fbdb1b1bbe0b4731` |
+| [meta-knowledge-base](meta-knowledge-base/) | `262707b2deff0892fda50dec0f3020ce3a1125f2` |
