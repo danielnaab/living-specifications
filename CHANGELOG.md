@@ -13,7 +13,7 @@ All notable changes to this project will be documented in this file.
   point at `scions/`.
 - `docs/` is unchanged.
 
-## [1.0.0] - 2026-11-03
+## [1.0.0] - 2026-11-02
 
 ### Changed
 
