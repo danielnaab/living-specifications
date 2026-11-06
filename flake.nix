@@ -1,11 +1,12 @@
 {
-  description = "graft-pins";
+  description = "Specification format, principles, and methodology for spec-driven development";
 
-  # graft (https://github.com/danielnaab/graft) copies the pinned exports of the knowledge this repo
-  # follows into scions/. `nix run .#graft` after changing a pin, then commit scions/;
-  # `nix flake check` fails if scions/ drifts from flake.lock.
-  inputs.graft.url = "github:danielnaab/graft/v2.5.0";
-  inputs.meta-knowledge-base = { url = "github:danielnaab/meta-knowledge-base/v1.0.1"; flake = false; };
+  inputs = {
+    # graft (https://github.com/danielnaab/graft): each `flake = false` input is a scion, a pinned
+    # export of the knowledge this repo follows, in scions/.
+    graft.url = "github:danielnaab/graft/v2.6.0";
+    meta-knowledge-base = { url = "github:danielnaab/meta-knowledge-base/v1.0.1"; flake = false; };
+  };
 
-  outputs = inputs: inputs.graft.lib.mkGraft { inherit inputs; deps = [ "meta-knowledge-base" ]; };
+  outputs = inputs: inputs.graft.lib.mkFlake { inherit inputs; };
 }
