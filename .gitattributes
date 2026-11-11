@@ -7,3 +7,4 @@
 /flake.nix           export-ignore
 /flake.lock          export-ignore
 /scions/             export-ignore
+/.forgejo/           export-ignore

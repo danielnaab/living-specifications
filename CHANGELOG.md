@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.2] - 2026-11-11
+
+### Changed
+
+- README, "Using This in Your Repository": pin `v1.0.2`, and linking by URL as the alternative to grafting.
+- README, "Architecture": shows the one design edge (knowledge-base-integrity implements the `# spec:`
+  annotation format) and says the graft of meta-knowledge-base is for this repo's upkeep only.
+- `knowledge-base.yaml` `version` matches the release (was `0.1.0`).
+- `.forgejo/` (this repo's CI) is no longer exported; it had been since graft CI was added after 1.0.1.
+- `docs/` is unchanged. Checked against the pre-extraction copy in delivery-practices
+  (`docs/living-specifications/`): this repo's text is newer in every file that differs, so nothing came across.
+
 ## [1.0.1] - 2026-11-03
 
 ### Changed

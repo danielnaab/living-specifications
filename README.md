@@ -58,20 +58,26 @@ Graft it ([graft](https://github.com/danielnaab/graft)): a pinned copy of this r
 your agent instructions (`AGENTS.md` or `CLAUDE.md`):
 
 ```nix
-inputs.living-specifications = { url = "github:danielnaab/living-specifications/v1.0.0"; flake = false; };
+inputs.living-specifications = { url = "github:danielnaab/living-specifications/v1.0.2"; flake = false; };
 ```
+
+Or link to it by URL (https://github.com/danielnaab/living-specifications/tree/v1.0.2/docs) with
+nothing to pin. Grafting gives agents a local copy and an upgrade path; a link is enough for people.
 
 ## Architecture
 
 ```
-meta-knowledge-base (KB organization patterns)
-        ↓
 living-specifications (this repo: spec-writing methodology)
-        ↓
-knowledge-base-integrity (enforcement tooling)
+        ↓ implemented by
+knowledge-base-integrity (enforcement tooling: its backlink scanner checks `# spec:` annotations)
         ↓
 your-project (applies the methodology)
 ```
+
+This repo owns the spec methodology (format, annotations, relationships). It is itself maintained as a
+knowledge base following [meta-knowledge-base](https://github.com/danielnaab/meta-knowledge-base)'s
+conventions, which it grafts into `scions/` for its own upkeep only; nothing from that copy is exported,
+so the methodology doesn't depend on it.
 
 ## Sources
 
