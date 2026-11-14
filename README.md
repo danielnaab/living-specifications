@@ -53,7 +53,7 @@ Guiding principle: steal structures, not tooling.
 
 ## Using This in Your Repository
 
-Graft it ([graft](https://github.com/danielnaab/graft) v2.13.0 or later): a git submodule of this
+Graft it ([graft](https://github.com/danielnaab/graft) v2.13.1 or later): a git submodule of this
 repository at a release tag, in your `scions/living-specifications/`, then link into it from your agent
 instructions (`AGENTS.md` or `CLAUDE.md`):
 
