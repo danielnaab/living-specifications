@@ -1,11 +1,10 @@
 <!-- managed by graft: https://github.com/danielnaab/graft -->
-# scions/
+# Scions
 
-Scions: each folder is another repository's export, grafted here by
-[graft](https://github.com/danielnaab/graft) at the commit pinned in `flake.lock`. Do not edit
-them. To upgrade: `nix run .#graft upgrade` (or change the tag in `flake.nix`, then
-`nix run .#graft`), then commit. `nix flake check` fails if this directory drifts from the pins.
+Each folder here is a git submodule: another repository, grafted at a release tag. Empty folders?
+Run `git submodule update --init` (or `nix run .#graft sync`).
 
-| Scion | Commit |
-|---|---|
-| [meta-knowledge-base](meta-knowledge-base/) | `8223746e072f3effdc7057e9869e986c02fc55f7` |
+- Read them freely. To fix one, see graft's "Fix a provider from a consumer" guide: edit, test, push to the
+  provider, release, then `nix run .#graft upgrade NAME`.
+- `nix run .#graft check` fails until every scion is clean and at a release tag.
+- Versions: `nix run .#graft outdated`.
