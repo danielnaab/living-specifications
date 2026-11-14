@@ -45,6 +45,18 @@ You may write to:
 Never write to (enforced for Claude Code by `.claude/settings.json`):
 - `secrets/**`, `credentials/**` — sensitive paths
 
+## Scions (graft)
+`scions/` holds git submodules: other repositories at release tags. Read them; they are the rules and tools
+this repository follows. If one is empty, run `git submodule update --init`.
+- Fix a provider bug here only as a provider change: in `scions/NAME`, `git switch -c fix-…`, edit, run the
+  provider's own tests there, push the branch to the provider and open its pull request. This repository takes
+  the fix with `nix run .#graft upgrade NAME` once it is released.
+- Nix builds of this repository see a scion edit only while another tracked file here is modified, and only
+  files that are `git add`-ed inside the scion. A scion checked out away from its gitlink (`git submodule
+  status` shows `+`) changes what Nix builds the same way. Test a provider fix with the provider's own tests.
+- `nix run .#graft check` fails while a scion has uncommitted edits, is away from its gitlink, or sits on an
+  unreleased commit. Don't commit a moved scion unless it is at a release tag.
+
 ## Provenance Requirements
 
 Always include **Sources** sections for:

@@ -53,12 +53,12 @@ Guiding principle: steal structures, not tooling.
 
 ## Using This in Your Repository
 
-Graft it ([graft](https://github.com/danielnaab/graft)): a pinned copy of this repo's export
-(README, CHANGELOG, `docs/`) in your `scions/living-specifications/`, then link into that copy from
-your agent instructions (`AGENTS.md` or `CLAUDE.md`):
+Graft it ([graft](https://github.com/danielnaab/graft) v2.13.0 or later): a git submodule of this
+repository at a release tag, in your `scions/living-specifications/`, then link into it from your agent
+instructions (`AGENTS.md` or `CLAUDE.md`):
 
-```nix
-inputs.living-specifications = { url = "github:danielnaab/living-specifications/v1.0.2"; flake = false; };
+```
+nix run .#graft -- add https://github.com/danielnaab/living-specifications@v1.0.2
 ```
 
 Or link to it by URL (https://github.com/danielnaab/living-specifications/tree/v1.0.2/docs) with
@@ -76,8 +76,8 @@ your-project (applies the methodology)
 
 This repo owns the spec methodology (format, annotations, relationships). It is itself maintained as a
 knowledge base following [meta-knowledge-base](https://github.com/danielnaab/meta-knowledge-base)'s
-conventions, which it grafts into `scions/` for its own upkeep only; nothing from that copy is exported,
-so the methodology doesn't depend on it.
+conventions, which it grafts into `scions/` for its own upkeep only; the methodology doesn't depend on
+it. (A repository that grafts this one gets that submodule too, nested in its scion.)
 
 ## Sources
 
