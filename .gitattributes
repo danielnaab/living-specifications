@@ -1,11 +1,11 @@
 # Export rules for `git archive` only (release tarballs). graft v2.13.1 and later doesn't read them: a repo
 # that grafts this one gets the whole repository as a git submodule. README, CHANGELOG and docs/ are the
-# methodology; the rest is this repo's own, including the scions it grafts in scions/.
+# methodology; the rest is this repo's own, including the patterns it takes in .patterns/.
 /.gitattributes      export-ignore
 /.claude/            export-ignore
 /AGENTS.md           export-ignore
 /knowledge-base.yaml export-ignore
 /flake.nix           export-ignore
 /flake.lock          export-ignore
-/scions/             export-ignore
+/.patterns/          export-ignore
 /.forgejo/           export-ignore

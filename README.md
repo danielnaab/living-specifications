@@ -76,7 +76,7 @@ your-project (applies the methodology)
 
 This repo owns the spec methodology (format, annotations, relationships). It is itself maintained as a
 knowledge base following [meta-knowledge-base](https://github.com/danielnaab/meta-knowledge-base)'s
-conventions, which it grafts into `scions/` for its own upkeep only; the methodology doesn't depend on
+conventions, which it takes as a pattern in `.patterns/` for its own upkeep only; the methodology doesn't depend on
 it. (A repository that grafts this one gets that submodule too, nested in its scion.)
 
 ## Sources

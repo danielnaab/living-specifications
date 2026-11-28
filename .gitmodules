@@ -1,3 +1,3 @@
 [submodule "scions/meta-knowledge-base"]
-	path = scions/meta-knowledge-base
+	path = .patterns/knowledge-base-kit
 	url = https://github.com/danielnaab/knowledge-base-kit
