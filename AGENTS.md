@@ -5,7 +5,7 @@ You are working in the **living-specifications knowledge base** — a repository
 ## Before Making Changes
 
 1. Read [knowledge-base.yaml](knowledge-base.yaml) for KB configuration
-2. Follow [meta knowledge base conventions](scions/meta-knowledge-base/README.md)
+2. Follow [knowledge base conventions](.patterns/knowledge-base-kit/README.md)
 3. Understand key policies:
    - **Authority**: docs/ is canonical
    - **Provenance**: Ground methodology recommendations in sources
@@ -31,7 +31,7 @@ As a knowledge curator for specification methodology:
 
 ## Workflow: Plan → Patch → Verify
 
-Follow the [agent workflow pattern](scions/meta-knowledge-base/docs/playbooks/agent-workflow.md):
+Follow the [agent workflow pattern](.patterns/knowledge-base-kit/docs/playbooks/agent-workflow.md):
 
 1. **Plan**: State intent, files to touch, uncertainties
 2. **Patch**: Make minimal changes to achieve goal
@@ -45,21 +45,22 @@ You may write to:
 Never write to (enforced for Claude Code by `.claude/settings.json`):
 - `secrets/**`, `credentials/**` — sensitive paths
 
-## Scions (graft)
-`scions/` holds git submodules: other repositories at release tags. Read them; they are the rules and tools
-this repository follows. If one is empty, run `git submodule update --init --recursive`.
-- Ask before you edit a scion: an edit there is a change to another repository. Fix it in the provider: in
-  `scions/NAME`, `git switch -c fix-…`, edit, run the provider's own tests there, push the branch to the
-  provider and open its pull request. This repository takes the fix with `nix run .#graft upgrade NAME@TAG`
+## Patterns (tuteur)
+`.patterns/` holds git submodules: other repositories at release tags. Read them; they are the rules and tools
+this repository follows; [.patterns/README.md](.patterns/README.md) links each one's guide. If one is empty,
+run `git submodule update --init --recursive`.
+- Ask before you edit a pattern: an edit there is a change to another repository. Fix it in the provider: in
+  `.patterns/NAME`, `git switch -c fix-…`, edit, run the provider's own tests there, push the branch to the
+  provider and open its pull request. This repository takes the fix with `nix run .#tuteur upgrade NAME@TAG`
   once it is released.
-- Commit or stash in a scion before you switch, pull or check out this repository's branches: a move of the
-  scion's gitlink can move the scion under your edits.
-- A Nix build of this repository uses a scion's uncommitted edits only while another tracked file here is
-  modified, and sees a new file in a scion only once it is `git add`-ed there. To build with them, run
-  `nix run .#graft -- try NAME` (it prints any `git -C … add` needed), build with the command it prints,
-  then `nix run .#graft -- try --stop`. Run `try --stop` before `git stash` here: stash fails while try is on.
-- `nix run .#graft check` fails while try is on, or while a scion has uncommitted edits, is away from its
-  gitlink, or sits on an unreleased commit. Don't commit a moved scion unless it is at a release tag.
+- Commit or stash in a pattern before you switch, pull or check out this repository's branches: a move of the
+  pattern's gitlink can move the pattern under your edits.
+- A Nix build of this repository uses a pattern's uncommitted edits only while another tracked file here is
+  modified, and sees a new file in a pattern only once it is `git add`-ed there. To build with them, run
+  `nix run .#tuteur -- try NAME` (it prints any `git -C … add` needed), build with the command it prints,
+  then `nix run .#tuteur -- try --stop`. Run `try --stop` before `git stash` here: stash fails while try is on.
+- `nix run .#tuteur check` fails while try is on, or while a pattern has uncommitted edits, is away from its
+  gitlink, or sits on an unreleased commit. Don't commit a moved pattern unless it is at a release tag.
 
 ## Provenance Requirements
 
