@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.3] - 2026-11-27
+
+### Changed
+
+- README, "Using This in Your Repository": take it as a pattern with tuteur v0.3.0 or later
+  (`nix run .#tuteur add https://github.com/danielnaab/living-specifications@v1.0.3`), into
+  `.patterns/living-specifications/` (was graft v2.13.1 and `scions/`; graft is archived, tuteur is its
+  successor). It ships no `pattern.nix`: consumers get its docs, no tools or checks. Pins `v1.0.3`.
+- README, "Architecture": names knowledge-base-kit, which meta-knowledge-base and knowledge-base-integrity
+  became, as the tooling that checks `# spec:` annotations and as the conventions this repo's own upkeep
+  follows; a consumer gets that pattern nested in `.patterns/living-specifications/.patterns/`.
+- `knowledge-base.yaml` `version` matches the release.
+- `docs/` is unchanged.
+
+### Upgrading
+
+Nothing to do: docs only. A repository that still pins this with graft moves to tuteur by tuteur's
+"Move from graft v2" guide, then takes this release with `nix run .#tuteur upgrade living-specifications`.
+
 ## [1.0.2] - 2026-11-11
 
 ### Changed
