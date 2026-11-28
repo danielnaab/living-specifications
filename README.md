@@ -53,31 +53,35 @@ Guiding principle: steal structures, not tooling.
 
 ## Using This in Your Repository
 
-Graft it ([graft](https://github.com/danielnaab/graft) v2.13.1 or later): a git submodule of this
-repository at a release tag, in your `scions/living-specifications/`, then link into it from your agent
+Take it as a pattern with [tuteur](https://github.com/danielnaab/tuteur) v0.3.0 or later: a git submodule of
+this repository at a release tag, in your `.patterns/living-specifications/`, then link into it from your agent
 instructions (`AGENTS.md` or `CLAUDE.md`):
 
 ```
-nix run .#graft -- add https://github.com/danielnaab/living-specifications@v1.0.2
+nix run .#tuteur add https://github.com/danielnaab/living-specifications@v1.0.3
 ```
 
-Or link to it by URL (https://github.com/danielnaab/living-specifications/tree/v1.0.2/docs) with
-nothing to pin. Grafting gives agents a local copy and an upgrade path; a link is enough for people.
+It ships no `pattern.nix`: you get the methodology (README, CHANGELOG and `docs/`) to read, with no tools or
+checks in your flake.
+
+Or link to it by URL (https://github.com/danielnaab/living-specifications/tree/v1.0.3/docs) with
+nothing to pin. A pattern gives agents a local copy and an upgrade path; a link is enough for people.
 
 ## Architecture
 
 ```
 living-specifications (this repo: spec-writing methodology)
         ↓ implemented by
-knowledge-base-integrity (enforcement tooling: its backlink scanner checks `# spec:` annotations)
+knowledge-base-kit (enforcement tooling: its backlink scanner checks `# spec:` annotations)
         ↓
 your-project (applies the methodology)
 ```
 
 This repo owns the spec methodology (format, annotations, relationships). It is itself maintained as a
-knowledge base following [meta-knowledge-base](https://github.com/danielnaab/meta-knowledge-base)'s
-conventions, which it takes as a pattern in `.patterns/` for its own upkeep only; the methodology doesn't depend on
-it. (A repository that grafts this one gets that submodule too, nested in its scion.)
+knowledge base following the conventions of [knowledge-base-kit](https://github.com/danielnaab/knowledge-base-kit)
+(formerly meta-knowledge-base and knowledge-base-integrity), which it takes as a pattern in `.patterns/` for
+its own upkeep only; the methodology doesn't depend on it. (A repository that takes this one as a pattern gets that submodule too, nested in
+`.patterns/living-specifications/.patterns/`.)
 
 ## Sources
 

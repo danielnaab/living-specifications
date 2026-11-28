@@ -1,6 +1,6 @@
 apiVersion: kb/v1
 name: living-specifications
-version: 1.0.2
+version: 1.0.3
 description: "Specification format, principles, and methodology for spec-driven development"
 
 entrypoints:
